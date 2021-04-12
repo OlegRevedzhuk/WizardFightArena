@@ -6,17 +6,9 @@ public class FireBoltSpawn : MonoBehaviour
     public Transform cam;
     private FireBolt bolt;
 
-    public int key = 0;
     private float distanceIfNoTarget = 1000f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(key))
-            CastSpell();
-    }
-
-    void CastSpell()
+    public void CastSpell()
     {
         RaycastHit hit;
         Vector3 target;

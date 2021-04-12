@@ -65,8 +65,9 @@ MonoBehaviour:
   explosionRadius: 4
   fizzleDuration: 1
   missleSpeed: 300
-  explosionPreFab: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3,
+  explosionPreFab: {fileID: 1337198075554910, guid: 25c7aa9ad705fe143a4d71c1c8deb7d4,
     type: 3}
+  trail: {fileID: 0}
 --- !u!136 &1213963530455315177
 CapsuleCollider:
   m_ObjectHideFlags: 0
