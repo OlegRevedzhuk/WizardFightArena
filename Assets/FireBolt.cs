@@ -2,13 +2,18 @@ using UnityEngine;
 
 public class FireBolt : MonoBehaviour
 {
-    public float spellMaxDuration = 2f;
-    public float explosionRadius = 4f;
-    public float fizzleDuration = 2.25f;
+    [SerializeField]
+    private float spellMaxDuration = 2f;
+    [SerializeField]
+    private float explosionRadius = 4f;
+    [SerializeField]
+    private float fizzleDuration = 2.25f;
     public float missleSpeed = 55f;
 
-    public GameObject explosionPreFab;
-    public ParticleSystem trail;
+    [SerializeField]
+    private GameObject explosionPreFab;
+    [SerializeField]
+    private ParticleSystem trail;
     private GameObject spellInstance;
 
     private Collider col;

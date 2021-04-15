@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class ElementTracker : MonoBehaviour
 {
-    public ElementContainer[] elementContainers;
-    public CastSpell spell;
+    [SerializeField]
+    private ElementContainer[] elementContainers;
+    [SerializeField]
+    private ChooseSpell spellPicker;
+
     private int numberOfContainers;
     private int indexOfCurrentContainer = 0;
 
-    public Dictionary<string, int> elements = new Dictionary<string, int>();
-    public string primary;
+    private Dictionary<string, int> elements;
+    private string primary;
     // Start is called before the first frame update
     void Start()
     {
         numberOfContainers = elementContainers.Length;
+        elements = new Dictionary<string, int>(numberOfContainers - 1);
         elements.Add("Fire", 0);
         elements.Add("Arcane", 0);
     }
@@ -51,12 +55,19 @@ public class ElementTracker : MonoBehaviour
 
     void CastSpell()
     {
-        spell.Cast(elements, primary);
+        if(primary == null)
+        {
+            //dosomething
+            return;
+        }
+        spellPicker.ElementsToSpell(elements, primary);
 
         foreach (ElementContainer cont in elementContainers)
         {
             cont.ResetSpellContainer();
         }
+
+        primary = null;
 
         elements = new Dictionary<string, int>(numberOfContainers - 1);
         elements.Add("Fire", 0);
