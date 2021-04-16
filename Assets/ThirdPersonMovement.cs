@@ -11,7 +11,7 @@ public class ThirdPersonMovement : MonoBehaviour
     private float horizontal = 0f;
     private float vertical = 0f;
     private float speed = 3f;
-    private bool isMoving;
+    private bool isMoving = false;
 
     private float currentSpeedBuff;
     private float currentSlowDebuff = 1f;

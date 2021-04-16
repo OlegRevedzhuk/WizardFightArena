@@ -2,10 +2,17 @@ using UnityEngine;
 
 public class ElementContainer : MonoBehaviour
 {
+    public enum ElementType
+    {
+        fire,
+        arcane,
+        none,
+    }
+
     private GameObject fire;
     private GameObject arcane;
 
-    private string currentActive;
+    private ElementType currentActive;
 
     // Start is called before the first frame update
     void Start()
@@ -14,17 +21,17 @@ public class ElementContainer : MonoBehaviour
         arcane = transform.Find("Arcane").gameObject;
     }
 
-    public void InvokeElement(string elementType)
+    public void InvokeElement(ElementType elementType)
     {
         switch (elementType)
         {
-            case "Fire":
+            case ElementType.fire:
                 fire.SetActive(true);
-                currentActive = "Fire";
+                currentActive = ElementType.fire;
                 break;
-            case "Arcane":
+            case ElementType.arcane:
                 arcane.SetActive(true);
-                currentActive = "Arcane";
+                currentActive = ElementType.arcane;
                 break;
         }
     }
@@ -33,14 +40,12 @@ public class ElementContainer : MonoBehaviour
     {
         switch (currentActive)
         {
-            case "Fire":
+            case ElementType.fire:
                 fire.SetActive(false);
                 break;
-            case "Arcane":
+            case ElementType.arcane:
                 arcane.SetActive(false);
                 break;
         }
-
-        currentActive = null;
     }
 }

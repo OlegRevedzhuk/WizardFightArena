@@ -4,11 +4,13 @@ public class FireBolt : MonoBehaviour
 {
     [SerializeField]
     private float spellMaxDuration = 2f;
+    //add damage health
     [SerializeField]
     private float explosionRadius = 4f;
     [SerializeField]
     private float fizzleDuration = 2.25f;
-    public float missleSpeed = 55f;
+    [SerializeField]
+    private float missleSpeed = 55f;
 
     [SerializeField]
     private GameObject explosionPreFab;
@@ -74,5 +76,10 @@ public class FireBolt : MonoBehaviour
             }
         }
         */
+    }
+
+    public float GetSpeed()
+    {
+        return missleSpeed;
     }
 }
