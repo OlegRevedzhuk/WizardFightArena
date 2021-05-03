@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4228186015214299444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 6031778023247090829}
   m_Father: {fileID: 0}
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c33973619328cd49b7aafc3ee18f959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missleSpeed: 45
+  missleSpeed: 35
   misslePreFab: {fileID: 6031778023246727341}
 --- !u!136 &8725571895469839806
 CapsuleCollider:

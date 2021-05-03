@@ -28,7 +28,8 @@ public class MagicMissle : MonoBehaviour
     {
         if (target != null)
         {
-            rb.AddForce((target.transform.position - rb.position).normalized * 1.5f, ForceMode.VelocityChange);
+            rb.AddForce((target.transform.position - rb.position).normalized * 20f, ForceMode.Acceleration);
+
             dir = rb.velocity.normalized;
             rb.MoveRotation(Quaternion.LookRotation(dir));
         }
